@@ -24,7 +24,7 @@ exportModule({
 				let sidebarData = Array.from(sidebarNode.querySelectorAll(".data-set .type"));
 				if(!sidebarData.length){
 					return
-				};
+				}
 				let status = sidebarData.find(element => element.innerText === "Status");
 				if(!status || status.parentNode.childElementCount != 2){
 					return

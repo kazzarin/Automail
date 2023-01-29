@@ -293,11 +293,11 @@ let wilson = function(positiveScore,total){
 
 
 
-//consider getting rid of this one
-Number.prototype.roundPlaces = function(places){
+//TODO: consider getting rid of this one
+Number.prototype.roundPlaces = function(places){//eslint-disable-line no-extend-native
 	return +(
 		Math.round(
-			this * Math.pow(10,places)
+			(this + Number.EPSILON) * Math.pow(10,places)
 		) / Math.pow(10,places)
 	)
 }

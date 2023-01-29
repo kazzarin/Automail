@@ -53,7 +53,7 @@ function addFeedFilters(){
 			let blockRequire = true;
 			if(useScripts.blockWord && activityFeed.children[i].classList.contains("activity-text")){
 				try{
-					if(activityFeed.children[i].innerText.match(new RegExp(blockWordValue,"i"))){
+					if(activityFeed.children[i].innerText.match(new RegExp(useScripts.blockWordValue,"i"))){
 						blockRequire = false
 					}
 				}

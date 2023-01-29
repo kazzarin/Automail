@@ -716,8 +716,8 @@ class RequestOptions{
 	}
 	isInternal(internal){
 		if(internal === true){
-			if(al_token){
-				this.headers.set("x-csrf-token", al_token)
+			if(window.al_token){
+				this.headers.set("x-csrf-token", window.al_token)
 			}
 			this.headers.set("schema", "internal")
 		}

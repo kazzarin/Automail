@@ -46,7 +46,6 @@ function addFeedFilters_user(){
 		if(activityFeed){
 			observer.disconnect();
 			observer = new MutationObserver(function(){
-				postRemover();
 				if(useScripts.additionalTranslation && useScripts.partialLocalisationLanguage !== "English"){
 					postTranslator()
 				}

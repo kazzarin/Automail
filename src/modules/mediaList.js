@@ -86,11 +86,11 @@ exportModule({
 					displayBox.parentNode.querySelector(".hohDisplayBoxClose").onclick = function(){
 						displayBox.parentNode.remove();
 						keepUpdating = false;
+						let cardList = document.querySelectorAll(".entry-card.row,.entry.row");
 						cardList.forEach(function(card){
 							card.draw3x3selected = false;
 							card.style.borderStyle = "none"
 						});
-						counter = 0;
 						linkList = []
 					};
 

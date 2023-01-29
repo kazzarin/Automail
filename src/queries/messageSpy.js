@@ -28,7 +28,7 @@ query($page: Int){
 						|| message.pure.match(/for( the)? follow/i)
 					){
 						return
-					};
+					}
 					let time = new Date(message.createdAt*1000);
 					let newElem = create("div","message",false,results);
 					create("span","time",time.toISOString().match(/^(.*)\.000Z$/)[1] + " ",newElem);

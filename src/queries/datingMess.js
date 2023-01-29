@@ -94,7 +94,7 @@
 								mediaId: item.mediaId
 							},
 							function(act){
-								if(!act){return};
+								if(!act){return}
 								let progressFirst = [act.data.first.status,act.data.first.progress].filter(TRUTHY).join(" ");
 								progressFirst = (progressFirst ? " (" + progressFirst + ")" : "");
 								let progressLast = [act.data.last.status,act.data.last.progress].filter(TRUTHY).join(" ");

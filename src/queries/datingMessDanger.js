@@ -2,11 +2,11 @@
 	if(!useScripts.accessToken){
 		miscResults.innerText = loginMessage;
 		return
-	};
+	}
 	if(user.toLowerCase() !== whoAmI.toLowerCase()){
 		miscResults.innerText = "This is the profile of\"" + user + "\", but currently signed in as \"" + whoAmI + "\". Are you sure this is right?";
 		return
-	};
+	}
 	let warning = create("b",false,"Clicking on red buttons means changes to your data!",miscResults);
 	let description = create("p",false,"When run, this will do the following:",miscResults);
 	create("p",false,"- Completed entries with 1 episode/chapter, no rewatches, no start date, but a completion date will have the start date set equal to the completion date",miscResults);
@@ -39,19 +39,19 @@
 				if(firstTime){
 					firstTime = false;
 					return
-				};
+				}
 				if(isDryRun){
 					create("p",false,"DRY RUN",changeLog)
-				};
+				}
 				if(!list.length){
 					changeLog.innerText = "Found no entries to change";
 					return
-				};
+				}
 				create("p",false,"Found " + list.length + " entries.",changeLog);
 				let changer = function(index){
 					if(!allowRun){
 						return
-					};
+					}
 					create("p",false,list[index].media.title.romaji + " start date set to " + list[index].completedAt.year + "-" + list[index].completedAt.month + "-" + list[index].completedAt.day,changeLog);
 					if(!isDryRun){
 						authAPIcall(
@@ -63,11 +63,11 @@
 							{mediaId: list[index].mediaId,date: list[index].completedAt},
 							data => {}
 						)
-					};
+					}
 					index++;
 					if(index < list.length){
 						setTimeout(function(){changer(index)},1000)
-					};
+					}
 				};changer(0);
 			};
 			const query = `query($name: String!, $listType: MediaType){

@@ -51,13 +51,13 @@ query($page:Int){
 							}
 							else{
 								recursiveCall(userName,amount,Math.floor((minPage + currentPage)/2),minPage,currentPage,type)
-							};
+							}
 							return;
 						}
 						else{
 							recursiveCall(userName,amount,Math.floor((minPage + currentPage - 1)/2),minPage,currentPage - 1,type);
 							return;
-						};
+						}
 					},"hohRank" + type + currentPage,60*60*1000
 				);
 			};

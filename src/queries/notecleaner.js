@@ -3,11 +3,11 @@ setup: function(){
 	if(!useScripts.accessToken){
 		miscResults.innerText = loginMessage;
 		return
-	};
+	}
 	if(user.toLowerCase() !== whoAmI.toLowerCase()){
 		miscResults.innerText = "This is the profile of\"" + user + "\", but currently signed in as \"" + whoAmI + "\". Are you sure this is right?";
 		return
-	};
+	}
 	let warning = create("b",false,"Clicking on the red button means changes to your data!",miscResults);
 	let description = create("p",false,"When run, this will remove all your list notes. You can not get them back",miscResults);
 	create("hr",false,false,miscResults);
@@ -46,7 +46,7 @@ query ($type: MediaType $userId: Int) {
 				if(!data){
 					alert("loading list failed!");
 					return
-				};
+				}
 				let t = {};
 				let mediaEntries = [];
 

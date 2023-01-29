@@ -48,7 +48,7 @@
 					for(var i=2;i<=data.data.Page.pageInfo.lastPage && i < ANILIST_QUERY_LIMIT;i++){
 						generalAPIcall(query,{userId: userId,page: i},addNewUserData)
 					}
-				};
+				}
 				posts += data.data.Page.activities.length;
 				progress.innerText = "Searching status post " + posts + "/" + data.data.Page.pageInfo.total;
 				data.data.Page.activities.forEach(act => {

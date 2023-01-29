@@ -30,7 +30,7 @@
 				for(var i=2;i<=data.data.Page.pageInfo.lastPage;i++){
 					generalAPIcall(query,{userId: userId,page: i},addNewUserData)
 				}
-			};
+			}
 			posts += data.data.Page.activities.length;
 			progress.innerText = "Searching message post " + posts + "/" + data.data.Page.pageInfo.total;
 			data.data.Page.activities.forEach(function(act){

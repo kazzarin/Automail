@@ -27,7 +27,7 @@
 			let possibleOlder = create("p",false,false,miscResults);
 			for(var i=1;i<=15;i++){
 				generalAPIcall(userFirstQuery,{userId: userId + i},function(data){
-					if(!data){return};
+					if(!data){return}
 					if(data.data.Activity.createdAt < createdAt){
 						createdAt = data.data.Activity.createdAt;
 						possibleOlder.innerText = "But the account is known to exist already at " + (new Date(createdAt * 1000));

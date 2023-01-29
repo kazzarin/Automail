@@ -38,7 +38,7 @@
 						}
 						else if(friend.difference > 1.1){
 							differenceSpan.style.color = "red"
-						};
+						}
 						userRow.appendChild(document.createTextNode(" "))
 						let friendLink = create("a","newTab",friend.user,userRow,"color:rgb(var(--color-blue))");
 						friendLink.href = "/user/" + friend.user;

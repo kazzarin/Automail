@@ -40,10 +40,10 @@ query($page: Int){
 				let offset = 0;
 				while(data2.data.Page.activities[offset].id > data.data.Page.activities[0].id){
 					offset++
-				};
+				}
 				while(data2.data.Page.activities[0].id < data.data.Page.activities[-offset].id){
 					offset--
-				};
+				}
 				for(var k=Math.max(-offset,0);k<data.data.Page.activities.length && (k + offset)<data2.data.Page.activities.length;k++){
 					if(data.data.Page.activities[k].id !== data2.data.Page.activities[k + offset].id){
 						offset--;
@@ -53,12 +53,12 @@ query($page: Int){
 							link.href = "/user/" + data.data.Page.activities[k].user.name;
 							blocks.add(data.data.Page.activities[k].user.name)
 						}
-					};
-				};
+					}
+				}
 				if(flag){
 					if(offset < -50){
 						page2--
-					};
+					}
 					setTimeout(function(){caller(page + 1,page2 + 1)},2000)
 				}
 			})

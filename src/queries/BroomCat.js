@@ -422,7 +422,7 @@ query($type: MediaType,$page: Int){
 				create("a",["link","newTab"],"[" + media.format + "] " + media.title.romaji,row,"width:440px;display:inline-block;")
 					.href = "/" + type.toLowerCase() + "/" + media.id;
 				create("span",false,matches.join(", "),row);
-			};
+			}
 		});
 		if(flag && data.pageInfo.hasNextPage === true && document.getElementById("queryOptions")){
 			page = data.pageInfo.currentPage + 1;

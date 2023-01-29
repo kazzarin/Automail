@@ -46,7 +46,7 @@ let cache = {
 				if(review.user.name){
 					userName = review.user.name
 				}
-			};
+			}
 			create("a",["link","newTab"],userName + "'s  review of " + review.media.title.romaji,dataCel)
 				.href = "/review/" + review.id
 		});
@@ -62,7 +62,7 @@ let cache = {
 				if(review.user.name){
 					userName = review.user.name
 				}
-			};
+			}
 			create("a",["link","newTab"],userName + "'s  review of " + review.media.title.romaji,dataCel)
 				.href = "/review/" + review.id
 		});
@@ -161,7 +161,7 @@ let cache = {
 		}
 		else{
 			maxVal = 15*magnitude
-		};
+		}
 		let valueFunction = function(val){
 			return height - margin.bottom - (val/maxVal) * (height - margin.bottom - margin.top)
 		};

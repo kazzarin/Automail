@@ -1,3 +1,4 @@
+/* eslint-disable */
 function levDist(s,t){//https://stackoverflow.com/a/11958496/5697837
 	// Step 1
 	s = s.replace("’", "'")
@@ -45,3 +46,4 @@ function levDist(s,t){//https://stackoverflow.com/a/11958496/5697837
 	}
 	return d[n][m]
 }
+/* eslint-enable */

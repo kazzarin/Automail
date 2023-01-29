@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*!
     localForage -- Offline Storage, Improved
     Version 1.10.0
@@ -2814,3 +2815,4 @@ module.exports = localforage_js;
 
 },{"3":3}]},{},[4])(4)
 });
+/* eslint-enable */

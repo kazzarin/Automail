@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Copyright (c) 2013 Pieroxy <pieroxy@pieroxy.net>
 // This work is free. You can redistribute it and/or modify it
 // under the terms of the WTFPL, Version 2
@@ -499,3 +500,4 @@ if (typeof define === 'function' && define.amd) {
 } else if( typeof module !== 'undefined' && module != null ) {
   module.exports = LZString
 }
+/* eslint-enable */

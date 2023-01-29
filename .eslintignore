@@ -1,10 +1,3 @@
-# Third-party code
-/src/utilities/levDist.js
-/src/utilities/localforage.js
-/src/utilities/lz-string.js
-/src/utilities/showdown.js
-/src/purify.js
-
 # Code fragments
 /src/queries/
 

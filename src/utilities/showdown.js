@@ -1,3 +1,4 @@
+/* eslint-disable */
 ;/*! showdown v 2.1.0 - 21-04-2022 */
 (function(){
 /**
@@ -5154,3 +5155,4 @@ if (typeof define === 'function' && define.amd) {
   root.showdown = showdown;
 }
 }).call(this);
+/* eslint-enable */

@@ -42,6 +42,6 @@ a.title${dataSelect}::before
 }
 
 const shortRomaji = (useScripts.titlecaseRomaji ? m4_include(data/titlecaseRomaji.json) : []).concat(
-	(useScripts.shortRomaji ? m4_include(data/shortRomaji.json) : [])
+	(useScripts.shortRomaji ? m4_include(data/shortRomaji.json) : [])//eslint-disable-line no-use-before-define
 );
 //end "alias.js"

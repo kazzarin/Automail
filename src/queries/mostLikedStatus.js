@@ -24,14 +24,14 @@
 		let addNewUserData = function(data){
 			list = list.concat(data.data.Page.activities);
 			if(data.data.Page.pageInfo.currentPage === 1){
-				for(var i=2;i<=Math.min(data.data.Page.pageInfo.lastPage,50);i++){//FIXME temporary workaround to prevent crashes until anilist fixes the page API. Limits to 2500 posts
+				for(let i=2;i<=Math.min(data.data.Page.pageInfo.lastPage,50);i++){//FIXME temporary workaround to prevent crashes until anilist fixes the page API. Limits to 2500 posts
 					generalAPIcall(query,{userId: userId,page: i},addNewUserData);
 				};
 			};
 			list.sort(function(b,a){return a.likes.length - b.likes.length});
 			progress.innerText = "Searching status post " + list.length + "/" + data.data.Page.pageInfo.total + " [total is incorrect until an Anilist bug is fixed. Query limited to 2500]";
 			removeChildren(results)
-			for(var i=0;i<20;i++){
+			for(let i=0;i<20;i++){
 				let newDate = create("p",false,list[i].likes.length + " likes ",results,"font-family:monospace;margin-right:10px;");
 				let newPage = create("a","newTab",list[i].siteUrl,newDate,"color:rgb(var(--color-blue));");
 				newPage.href = list[i].siteUrl;

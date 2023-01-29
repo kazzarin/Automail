@@ -47,7 +47,7 @@ query ($type: MediaType $userId: Int) {
 					alert("loading list failed!");
 					return
 				};
-                   		let t = {};
+				let t = {};
 				let mediaEntries = [];
 
 				// Go through all lists

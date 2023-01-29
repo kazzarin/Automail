@@ -32,18 +32,18 @@ function addFeedFilters(){
 		if(!location.pathname.match(/^\/home\/?$/)){
 			return
 		}
-		for(var i=0;i<activityFeed.children.length;i++){
-			if(activityFeed.children[i].querySelector(".el-dialog__wrapper")){
-				continue
+		[...activityFeed.children].forEach(post => {
+			if(post.querySelector(".el-dialog__wrapper")){
+				return
 			}
-			let actionLikes = activityFeed.children[i].querySelector(".action.likes .button .count");
+			let actionLikes = post.querySelector(".action.likes .button .count");
 			if(actionLikes){
 				actionLikes = parseInt(actionLikes.innerText)
 			}
 			else{
 				actionLikes = 0
 			}
-			let actionReplies = activityFeed.children[i].querySelector(".action.replies .count");
+			let actionReplies = post.querySelector(".action.replies .count");
 			if(actionReplies){
 				actionReplies = parseInt(actionReplies.innerText)
 			}
@@ -51,14 +51,14 @@ function addFeedFilters(){
 				actionReplies = 0
 			}
 			let blockRequire = true;
-			if(useScripts.blockWord && activityFeed.children[i].classList.contains("activity-text")){
+			if(useScripts.blockWord && post.classList.contains("activity-text")){
 				try{
-					if(activityFeed.children[i].innerText.match(new RegExp(useScripts.blockWordValue,"i"))){
+					if(post.querySelector(".activity-markdown").innerText.match(new RegExp(useScripts.blockWordValue,"i"))){
 						blockRequire = false
 					}
 				}
 				catch(err){
-					if(activityFeed.children[i].innerText.toLowerCase().match(useScripts.blockWordValue.toLowerCase())){
+					if(post.querySelector(".activity-markdown").innerText.toLowerCase().match(useScripts.blockWordValue.toLowerCase())){
 						blockRequire = false
 					}
 				}
@@ -86,34 +86,34 @@ function addFeedFilters(){
 					"activityRereading": "REPEATING",
 					"activityReread": "REPEATING"
 				};
-				if(activityFeed.children[i].classList.contains("activity-anime_list") || activityFeed.children[i].classList.contains("activity-manga_list")){
+				if(post.classList.contains("activity-anime_list") || post.classList.contains("activity-manga_list")){
 					let status = blockerClassMap[
-							activityFeed.children[i].querySelector(".status").classList[1]
+							post.querySelector(".status").classList[1]
 						] || blockerMap[
 						Object.keys(blockerMap).find(
-							key => activityFeed.children[i].querySelector(".status").innerText.toLowerCase().includes(key)
+							key => post.querySelector(".status").innerText.toLowerCase().includes(key)
 						)
 					]
 					if(status === "CURRENT"){
-						activityFeed.children[i].children[0].style.borderRightWidth = "0px";
-						activityFeed.children[i].children[0].style.marginRight = "0px"
+						post.children[0].style.borderRightWidth = "0px";
+						post.children[0].style.marginRight = "0px"
 					}
 					else if(status === "COMPLETED"){
-						activityFeed.children[i].children[0].style.borderRightStyle = "solid";
-						activityFeed.children[i].children[0].style.borderRightWidth = "5px";
-						if(useScripts.CSSgreenManga && activityFeed.children[i].classList.contains("activity-anime_list")){
-							activityFeed.children[i].children[0].style.borderRightColor = "rgb(var(--color-blue))"
+						post.children[0].style.borderRightStyle = "solid";
+						post.children[0].style.borderRightWidth = "5px";
+						if(useScripts.CSSgreenManga && post.classList.contains("activity-anime_list")){
+							post.children[0].style.borderRightColor = "rgb(var(--color-blue))"
 						}
 						else{
-							activityFeed.children[i].children[0].style.borderRightColor = "rgb(var(--color-green))"
+							post.children[0].style.borderRightColor = "rgb(var(--color-green))"
 						}
-						activityFeed.children[i].children[0].style.marginRight = "-5px"
+						post.children[0].style.marginRight = "-5px"
 					}
 					else{
-						activityFeed.children[i].children[0].style.borderRightStyle = "solid";
-						activityFeed.children[i].children[0].style.borderRightWidth = "5px";
-						activityFeed.children[i].children[0].style.marginRight = "-5px";
-						activityFeed.children[i].children[0].style.borderRightColor = distributionColours[status];
+						post.children[0].style.borderRightStyle = "solid";
+						post.children[0].style.borderRightWidth = "5px";
+						post.children[0].style.marginRight = "-5px";
+						post.children[0].style.borderRightColor = distributionColours[status];
 					}
 				}	
 			}
@@ -138,31 +138,31 @@ function addFeedFilters(){
 				&& blockList.every(
 					blocker => (
 						blocker.user
-						&& activityFeed.children[i].querySelector(".name").textContent.trim().toLowerCase() !== blocker.user.toLowerCase()
+						&& post.querySelector(".name").textContent.trim().toLowerCase() !== blocker.user.toLowerCase()
 					)
 					|| (
 						blocker.media
 						&& (
-							activityFeed.children[i].classList.contains("activity-text")
-							|| activityFeed.children[i].querySelector(".status .title").href.match(/\/(anime|manga)\/(\d+)/)[2] !== blocker.media
+							post.classList.contains("activity-text")
+							|| post.querySelector(".status .title").href.match(/\/(anime|manga)\/(\d+)/)[2] !== blocker.media
 						)
 					)
 					|| (
 						blocker.status
 						&& (
-							activityFeed.children[i].classList.contains("activity-text")
+							post.classList.contains("activity-text")
 							|| blocker.status == "status"
 							|| (
 								blocker.status === "anime"
-								&& !activityFeed.children[i].classList.contains("activity-anime_list")
+								&& !post.classList.contains("activity-anime_list")
 							)
 							|| (
 								blocker.status === "manga"
-								&& !activityFeed.children[i].classList.contains("activity-manga_list")
+								&& !post.classList.contains("activity-manga_list")
 							)
 							|| (
 								statusCheck[blocker.status]
-								&& !activityFeed.children[i].querySelector(".status").textContent.trim().match(statusCheck[blocker.status])
+								&& !post.querySelector(".status").textContent.trim().match(statusCheck[blocker.status])
 							)
 						)
 					)
@@ -170,19 +170,19 @@ function addFeedFilters(){
 			){
 				if(
 					useScripts.SFWmode
-					&& activityFeed.children[i].classList.contains("activity-text")
-					&& badWords.some(word => activityFeed.children[i].querySelector(".activity-markdown").innerText.match(word))
+					&& post.classList.contains("activity-text")
+					&& badWords.some(word => post.querySelector(".activity-markdown").innerText.match(word))
 				){
-					activityFeed.children[i].style.opacity= 0.5
+					post.style.opacity= 0.5
 				}
 				else{
-					activityFeed.children[i].style.display = ""
+					post.style.display = ""
 				}
 			}
 			else{
-				activityFeed.children[i].style.display = "none"
+				post.style.display = "none"
 			}
-		}
+		})
 	};
 	let postTranslator = function(){
 		Array.from(activityFeed.children).forEach(activity => {

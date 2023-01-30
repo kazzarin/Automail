@@ -135,7 +135,7 @@ exportModule({
 			},
 			{
 				regex: /\/user\/([^/]+)\/?$/,
-				elements: [,
+				elements: [
 					{
 						lookup: ".overview .genre-overview .genre > .name",
 						multiple: [

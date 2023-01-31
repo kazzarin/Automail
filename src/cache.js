@@ -118,7 +118,6 @@ query($name: String!){
 	},
 	updateIfDifferent: function(mediaData,doNotWrite){
 		let different = false;
-		let found = false;
 		//logic here
 		if(different){
 			aniCast.postMessage({type:"cachev2",mediaData: mediaData});

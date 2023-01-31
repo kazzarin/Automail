@@ -95,13 +95,13 @@ function addComparisionPage(){
 	ratingFilter.type = "number";
 	ratingFilter.value = 1;
 	ratingFilter.min = 0;
-	let systemFilterLabel = create("span",false,translate("$compare_individualRatings"),compareArea,"padding:5px;");
+	create("span",false,translate("$compare_individualRatings"),compareArea,"padding:5px;");//systemFilterLabel
 	let systemFilter = createCheckbox(compareArea);
 	systemFilter.checked = useScripts.comparisionSystemFilter;
-	let normalFilterLabel = create("span",false,translate("$compare_normalizeRatings"),compareArea,"padding:5px;");
+	create("span",false,translate("$compare_normalizeRatings"),compareArea,"padding:5px;");//normalFilterLabel
 	let normalFilter = createCheckbox(compareArea);
 	normalFilter.checked = false;
-	let colourLabel = create("span",false,translate("$compare_colourCell"),compareArea,"padding:5px;");
+	create("span",false,translate("$compare_colourCell"),compareArea,"padding:5px;");//colourLabel
 	let colourFilter = createCheckbox(compareArea);
 	colourFilter.checked = useScripts.comparisionColourFilter;		
 	let tableContainer = create("table",false,false,compareArea);
@@ -321,7 +321,7 @@ function addComparisionPage(){
 			table.lastChild.remove()
 		}
 		let columnAmounts = [];
-		users.forEach(function(element){
+		users.forEach(function(){
 			columnAmounts.push({sum:0,amount:0})
 		})
 		shows.forEach(function(show){
@@ -546,7 +546,7 @@ function addComparisionPage(){
 			sortShows();
 			drawTable()
 		};
-		let typeCelLabel = create("span",false,capitalize(type),typeCel);
+		create("span",false,capitalize(type),typeCel);//typeCelLabel
 		let upArrowa = create("span","hohArrowSort","▲",typeCel);
 		upArrowa.onclick = function(){
 			ratingMode = "titleInverse";

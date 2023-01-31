@@ -32,7 +32,7 @@ async function addForumMediaNoAWC(){
 				let nameWrap = create("a",false,false,name);
 				nameWrap.href = (thread.replyUser || thread.user).name;
 				contextText.href = "/forum/thread/" + thread.id + "/comment/" + thread.replyCommentId;
-				let nameInner = create("span",false,(thread.replyUser || thread.user).name,nameWrap);
+				create("span",false,(thread.replyUser || thread.user).name,nameWrap);
 			}
 			else if(!thread.replyUser){
 				let contextText = create("a",false,translate("$particle_by"),name);
@@ -40,12 +40,12 @@ async function addForumMediaNoAWC(){
 				let nameWrap = create("a",false,false,name);
 				nameWrap.href = "/user/" + thread.user.name;
 				contextText.href = "/forum/thread/" + thread.id;
-				let nameInner = create("span",false,thread.user.name,nameWrap);
+				create("span",false,thread.user.name,nameWrap);
 			}
 			else{
 				let nameWrap = create("a",false,false,name);
 				nameWrap.href = "/user/" + thread.replyUser.name;
-				let nameInner = create("span",false,thread.replyUser.name,nameWrap);
+				create("span",false,thread.replyUser.name,nameWrap);
 				name.appendChild(document.createTextNode(" "));
 				let contextText = create("a",false,translate("$forum_preview_reply"),name);
 				contextText.href = "/forum/thread/" + thread.id + "/comment/" + thread.replyCommentId;

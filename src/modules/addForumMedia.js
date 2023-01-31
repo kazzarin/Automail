@@ -5,7 +5,7 @@ exportModule({
 	importance: -1,
 	categories: ["Forum","Navigation"],
 	visible: false,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.includes("https://anilist.co/forum/recent?media=")
 	},
 	code: async function(){

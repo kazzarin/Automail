@@ -3,11 +3,11 @@
 	let dataHeader = create("div",false,false,miscResults);
 	create("p",false,"Static statistics as of January 13, 2023. (Maybe this can become dynamic again one day)",dataHeader);
 	create("span",false,"Scanned ",dataHeader);
-	let data_amount = create("span",false,"12401",dataHeader);
+	create("span",false,"12401",dataHeader);//data_amount
 	create("span",false," reviews on Anilist, with ",dataHeader);
-	let data_ratingAmount = create("span",false,"612920",dataHeader);
+	create("span",false,"612920",dataHeader);//data_ratingAmount
 	create("span",false," ratings (",dataHeader);
-	let data_ratingPositive = create("span",false,"68.3",dataHeader);
+	create("span",false,"68.3",dataHeader);//data_ratingPositive
 	create("span",false,"% positive)",dataHeader);
 let cache = {
 	"time": 1673628542376,
@@ -128,13 +128,13 @@ let cache = {
 			viewBox: "0 0 " + width + " " + height
 		});
 		dia.style.borderRadius = "3px";
-		let background = svgShape("rect",dia,{
+		svgShape("rect",dia,{
 			fill: "rgb(var(--color-foreground))",
 			x: 0,
 			y: 0,
 			width: "100%",
 			height: "100%"
-		});
+		})
 		let margin = {
 			bottom: 30,
 			top: 30,

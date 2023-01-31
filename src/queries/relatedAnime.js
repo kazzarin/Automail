@@ -56,27 +56,27 @@
 
 		let row1 = create("p",false,false,filters);
 		let checkBox1 = createCheckbox(row1);
-		let label1 = create("span",false,"Prequel",row1);
+		create("span",false,"Prequel",row1);
 
 		let row2 = create("p",false,false,filters);
 		let checkBox2 = createCheckbox(row2);
-		let label2 = create("span",false,"Sequel",row2);
+		create("span",false,"Sequel",row2);
 
 		let row3 = create("p",false,false,filters);
 		let checkBox3 = createCheckbox(row3);
-		let label3 = create("span",false,"Side Story",row3);
+		create("span",false,"Side Story",row3);
 
 		let row4 = create("p",false,false,filters);
 		let checkBox4 = createCheckbox(row4);
-		let label4 = create("span",false,"Alternative",row4);
+		create("span",false,"Alternative",row4);
 
 		let row5 = create("p",false,false,filters);
 		let checkBox5 = createCheckbox(row5);
-		let label5 = create("span",false,"Other Relation",row5);
+		create("span",false,"Other Relation",row5);
 
 		let row6 = create("p",false,false,filters);
 		let checkBox6 = createCheckbox(row6);
-		let label6 = create("span",false,"Include media related to dropped anime",row6);
+		create("span",false,"Include media related to dropped anime",row6);
 
 		checkBox1.checked = true;
 		checkBox2.checked = true;

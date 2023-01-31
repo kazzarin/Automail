@@ -7,13 +7,13 @@
 		miscResults.innerText = "This is the profile of\"" + user + "\", but currently signed in as \"" + whoAmI + "\". Are you sure this is right?";
 		return
 	}
-	let warning = create("b",false,"Clicking on red buttons means changes to your data!",miscResults);
-	let description = create("p",false,"When run, this will do the following:",miscResults);
+	create("b",false,"Clicking on red buttons means changes to your data!",miscResults);
+	create("p",false,"When run, this will do the following:",miscResults);
 	create("p",false,"- Completed entries with 1 episode/chapter, no rewatches, no start date, but a completion date will have the start date set equal to the completion date",miscResults);
 	create("p",false,"- A list of all the changes will be printed.",miscResults);
 	create("p",false,"- This will run slowly, and can be stopped at any time.",miscResults);
 	let dryRun = create("button",["button","hohButton"],"Dry run",miscResults);
-	let dryRunDesc = create("span",false,"(no changes made)",miscResults);
+	create("span",false,"(no changes made)",miscResults);
 	create("hr",false,false,miscResults);
 	let fullRun = create("button",["button","hohButton","danger"],"RUN",miscResults);
 	let stopRun = create("button",["button","hohButton"],"Abort!",miscResults);
@@ -31,7 +31,7 @@
 		allowRunner = false;
 		fullRun.disabled = true;	
 		dryRun.disabled = true;
-		generalAPIcall("query($name:String){User(name:$name){id}}",{name: user},function(iddata){
+		generalAPIcall("query($name:String){User(name:$name){id}}",{name: user},function(){
 			let proc = function(data){
 				list = list.concat((returnList(data,true) || []).filter(
 					item => item.status === "COMPLETED" && (item.media.episodes || item.media.chapters) === 1 && (!item.startedAt.year) && item.completedAt.year && !item.repeat

@@ -41,7 +41,7 @@
 		config.forEach(function(setting){
 			let row = create("p",false,false,miscOptions);
 			let checkBox = createCheckbox(row);
-			let label = create("span",false,setting.description,row);
+			create("span",false,setting.description,row);
 			checkBox.checked = true;
 			checkBox.onchange = function(){
 				Array.from(miscResults.children).forEach(res => {

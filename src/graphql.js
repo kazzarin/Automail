@@ -552,8 +552,8 @@ query{
 function accessTokenRetractedInfo(){
 	console.warn("Access token retracted.");
 	let box = createDisplayBox("width:600px;height:500px;top:100px;left:220px",script_type);
-	let title = create("h4",false,"Access token retracted",box);
-	let body = create("p",false,`
+	create("h4",false,"Access token retracted",box);
+	create("p",false,`
 The authentication access token you gave ${script_type} has been retracted.
 
 This means some modules that require elevated priviledges will not work. Other parts of the script will work fine.
@@ -569,7 +569,7 @@ You can try getting a new token by clicking this link:
 	let link = create("a",false,translate("$terms_signin_link"),box,"font-size: x-large;");
 	link.href = authUrl;
 	link.style.color = "rgb(var(--color-blue))";
-	let note = create("p",false,`
+	create("p",false,`
 (If you always want to sign in again when this happens, enable "Warn me when I get signed out from ${script_type}" in the settings. That will cause this dialogue to always pop up when the token is missing)
 `,box);
 }

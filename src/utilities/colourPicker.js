@@ -76,7 +76,7 @@ if(useScripts.colourPicker && (!useScripts.mobileFriendly)){
 				"--color-green"
 			];
 			let cpContainer = create("div","hohColourPicker",false,colourPickerLocation);
-			let cpTitle = create("h2",false,translate("$adjustColours_title"),cpContainer);
+			create("h2",false,translate("$adjustColours_title"),cpContainer);
 			let cpInput = create("input",false,false,cpContainer);
 			cpInput.type = "color";
 			let cpSelector = create("select",false,false,cpContainer);

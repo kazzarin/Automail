@@ -6,7 +6,7 @@ exportModule({
 	importance: -1,
 	categories: ["Feeds"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(){
 		return location.pathname.match(/^\/home\/?$/)
 	},
 	code: function(){
@@ -31,6 +31,7 @@ exportModule({
 				}  
 			},false)
 		}
+		addDblclickZoom()
 	},
 	css: `
 .hohZoom{

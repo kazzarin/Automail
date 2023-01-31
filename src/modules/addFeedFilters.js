@@ -17,9 +17,7 @@ function addFeedFilters(){
 		return
 	}
 	let commentFilterBoxInput;
-	let commentFilterBoxLabel;
 	let likeFilterBoxInput;
-	let likeFilterBoxLabel;
 	let allFilterBox;
 	let blockList = localStorage.getItem("blockList");
 	if(blockList){
@@ -292,11 +290,11 @@ function addFeedFilters(){
 		commentFilterBoxInput = create("input",false,false,filterBox);
 		commentFilterBoxInput.type = "number";
 		commentFilterBoxInput.value = useScripts.feedCommentComments;
-		commentFilterBoxLabel = create("span",false," comments, ",filterBox);
+		create("span",false," comments, ",filterBox);
 		likeFilterBoxInput = create("input",false,false,filterBox);
 		likeFilterBoxInput.type = "number";
 		likeFilterBoxInput.value = useScripts.feedCommentLikes;
-		likeFilterBoxLabel = create("span",false," likes",filterBox);
+		create("span",false," likes",filterBox);
 		allFilterBox = create("button",false,"⟳",filterBox,"padding:0px;");
 		commentFilterBoxInput.onchange = function(){
 			useScripts.feedCommentComments = commentFilterBoxInput.value;

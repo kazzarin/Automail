@@ -44,7 +44,6 @@ function addEntryScore(id,tries){
 							scoreSpan.appendChild(scoreFormatter(MediaList.score,userObject.mediaListOptions.scoreFormat));
 							if(useScripts.accessToken && ["POINT_100","POINT_10","POINT_10_DECIMAL","POINT_5"].includes(userObject.mediaListOptions.scoreFormat)){
 								let updateScore = function(isUp){
-									let score = MediaList.score;
 									if(isUp){
 										MediaList.score += stepSize
 									}

@@ -554,7 +554,8 @@ fragment mediaListEntry on MediaList{
 				if(document.querySelector(".medialist").classList.contains("POINT_5")){
 					maxScore = 5;
 				}
-				let scoreChanger = function(){
+				let lists = document.querySelector(".lists");
+				let scoreChanger = function(_,observer){
 					observer.disconnect();
 					lists.querySelectorAll(".list-entries .row .score").forEach(function(entry){
 						if(!entry.childElementCount){
@@ -609,7 +610,6 @@ fragment mediaListEntry on MediaList{
 					});
 					observer.observe(lists,mutationConfig)
 				}
-				let lists = document.querySelector(".lists");
 				let observer = new MutationObserver(scoreChanger);
 				observer.observe(lists,mutationConfig);
 				scoreChanger()

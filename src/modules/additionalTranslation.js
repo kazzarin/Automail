@@ -6,7 +6,7 @@ exportModule({
 	importance: 0,
 	categories: ["Script","Newly Added"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(){
 		return useScripts.partialLocalisationLanguage !== "English"
 	},
 	code: function(){

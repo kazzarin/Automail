@@ -1,6 +1,6 @@
 let mutated = false;
 
-let titleObserver = new MutationObserver(mutations => {
+let titleObserver = new MutationObserver(() => {
 	if(mutated){
 		mutated = false;
 		return

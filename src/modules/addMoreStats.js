@@ -405,14 +405,14 @@ function addMoreStats(){
 			if(autoHide){
 				let tableHider = create("span",["hohMonospace","hohTableHider"],"[-]",header);
 				let regularTagsSetting = create("p",false,false,tableLocation);
-				let regularTagsSettingLabel = create("span",false,translate("$stats_regularTags"),regularTagsSetting);
+				create("span",false,translate("$stats_regularTags"),regularTagsSetting);
 				let regularTagsSettingContent = create("span",false,false,regularTagsSetting);
-				let regularTagsSettingNew = create("input",false,false,regularTagsSetting);
+				create("input",false,false,regularTagsSetting);
 				let regularTagsSettingAdd = create("button",["hohButton","button"],"+",regularTagsSetting);
 				let regularTags = JSON.parse(localStorage.getItem("regularTags" + formatter.title)) || [];
 				for(let i=0;i<regularTags.length;i++){
 					let tag = create("span","hohRegularTag",false,regularTagsSettingContent);
-					let tagContent = create("span",false,regularTags[i],tag);
+					create("span",false,regularTags[i],tag);
 					let tagCross = create("span","hohCross",svgAssets.cross,tag);
 					tagCross.regularTag = regularTags[i] + "";
 					tagCross.addEventListener("click",function(){
@@ -434,7 +434,7 @@ function addMoreStats(){
 					newTagName = capitalize(newTagName);
 					regularTags.push(newTagName);
 					let tag = create("span","hohRegularTag");
-					let tagContent = create("span",false,newTagName,tag);
+					create("span",false,newTagName,tag);
 					let tagCross = create("span","hohCross",svgAssets.cross,tag);
 					tagCross.regularTag = newTagName + "";
 					tagCross.addEventListener("click",function(){
@@ -538,7 +538,7 @@ function addMoreStats(){
 				celData: [
 					function(cel,data,index,isPrimary,isTag){
 						if(isPrimary){
-							let nameCellCount = create("div","count",(index+1),cel);
+							create("div","count",(index+1),cel);
 							let nameCellTag = create("a",false,data[index].name,cel,"cursor:pointer;");
 							if(isTag){
 								if(mixedFormatter.anime && data[index].list.some(media => media.type === "ANIME")){
@@ -665,7 +665,7 @@ function addMoreStats(){
 				if(regularFilterHeading.children.length === 0){
 					let filterWrap = create("div",false,false,regularFilterHeading);
 					create("p",false,"tip: click a row to show individual media entries",regularFilterHeading);
-					let filterLabel = create("span",false,translate("$filters"),filterWrap);
+					create("span",false,translate("$filters"),filterWrap);
 					let tableHider = create("span",["hohMonospace","hohTableHider"],"[+]",filterWrap);
 					let filters = create("div",false,false,filterWrap,"display: none");
 
@@ -853,11 +853,11 @@ function addMoreStats(){
 
 			let regularFilterHeading = create("div",false,false,personalStats,"margin-bottom: 10px;");
 			let filterWrap = create("div",false,false,regularFilterHeading);
-			let filterLabel = create("span",false,translate("$filters"),filterWrap);
+			create("span",false,translate("$filters"),filterWrap);
 			let tableHider = create("span",["hohMonospace","hohTableHider"],"[+]",filterWrap);
 			let filters = create("div",false,false,filterWrap,"display: none");
 
-			let listFilterHeading = create("p",false,translate("$filters_lists"),filters);
+			create("p",false,translate("$filters_lists"),filters);
 			filterSettings = filterSettings || {
 				lists: {}
 			};
@@ -1163,8 +1163,8 @@ function addMoreStats(){
 				celData: [
 					function(cel,data,index,isPrimary){
 						if(isPrimary){
-							let nameCellCount = create("div","count",(index+1),cel);
-							let nameCellTag = create("a",false,data[index].name,cel,"cursor:pointer;");
+							create("div","count",(index+1),cel);
+							create("a",false,data[index].name,cel,"cursor:pointer;");
 							let nameCellStatus = create("span","hohSummableStatusContainer",false,cel);
 							semmanticStatusOrder.forEach(function(status){
 								if(data[index].status && data[index].status[status]){
@@ -1795,7 +1795,7 @@ function addMoreStats(){
 			create("h1","hohStatHeading",translate("$stats_manga_heading",user),personalStatsManga);
 			let list = returnList(data);
 			let scoreList = list.filter(element => element.scoreRaw);
-			let personalStatsMangaContainer = create("div",false,false,personalStatsManga);
+			create("div",false,false,personalStatsManga);
 			if(whoAmI && whoAmI !== user){
 				let compatabilityButton = create("button",["button","hohButton"],"Compatibility",personalStatsManga);
 				let compatLocation = create("div","#hohCheckCompatManga",false,personalStatsManga);
@@ -2035,7 +2035,7 @@ function addMoreStats(){
 				celData: [
 					function(cel,data,index,isPrimary){
 						if(isPrimary){
-							let nameCellCount = create("div","count",(index+1),cel);
+							create("div","count",(index+1),cel);
 							create("a",false,data[index].name,cel,"cursor:pointer;");
 							let nameCellStatus = create("span","hohSummableStatusContainer",false,cel);
 							semmanticStatusOrder.forEach(function(status){

@@ -4,7 +4,7 @@ exportModule({
 	isDefault: false,
 	categories: ["Browse","Navigation"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(){
 		return false
 	}
 })

@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: [/*"Submissions",*/"Profiles"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/^https:\/\/anilist\.co\/edit/)
 	},
 	code: function enumerateSubmissionStaff(){

@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Forum"],
 	visible: false,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return /^https:\/\/anilist\.co\/forum\/thread\/.*/.test(url)
 	},
 	code: function(){

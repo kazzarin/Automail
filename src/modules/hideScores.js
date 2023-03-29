@@ -68,7 +68,7 @@ exportModule({
 			else{
 				pNode = document.querySelector(".forum-thread") || await watchElem(".forum-thread");
 			}
-			let removeEmbedScore = function(mutations,observer){
+			let removeEmbedScore = function(){
 				let embed = Array.from(pNode.querySelectorAll(".embed .wrap .info:not(.hohEmbedHiddenScore)"));
 				if(embed.length){
 					embed.forEach(element => {

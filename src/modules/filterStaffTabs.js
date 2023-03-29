@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Media"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/^https:\/\/anilist\.co\/(anime|manga)\/\d+\/.*\/staff/)
 	},
 	code: async function(){

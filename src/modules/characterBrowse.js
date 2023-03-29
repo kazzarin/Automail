@@ -45,7 +45,7 @@ query($page: Int!,$perPage: Int!){
 
 		if(!/\/search\/characters\/?$/.test(location.pathname)){ // full favorites page
 			perPage = 20;
-			new MutationObserver((_mutations) => {
+			new MutationObserver(() => {
 				if(results.childElementCount !== charCount && results.childElementCount % 20 === 0){
 					charCount = results.childElementCount;
 					getFavs();

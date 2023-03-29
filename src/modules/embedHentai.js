@@ -25,7 +25,7 @@ function embedHentai(){
 				eCover.style.backgroundImage = "url(" + data.data.Media.coverImage.large + ")";
 				let eWrap = create("div","wrap",false,eEmbed);
 				let mediaTitle = titlePicker(data.data.Media);
-				let eTitle = create("div","title",mediaTitle,eWrap);
+				create("div","title",mediaTitle,eWrap);
 				let eInfo = create("div","info",false,eWrap);
 				let eGenres = create("div","genres",false,eInfo);
 				data.data.Media.genres.forEach((genre,index) => {

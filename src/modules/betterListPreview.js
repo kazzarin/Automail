@@ -225,7 +225,7 @@ function betterListPreview(){
 							}
 						}
 					}
-					let title = create("a","title",air.media.title.userPreferred,content,"font-size: 1.4rem;");
+					create("a","title",air.media.title.userPreferred,content,"font-size: 1.4rem;");
 					let info = create("div",["info","hasMeter"],false,content,"bottom: 12px;color: rgb(var(--color-text-lighter));font-size: 1.2rem;left: 12px;position: absolute;");
 					let pBar;
 					if(air.media.episodes && useScripts.progressBar){

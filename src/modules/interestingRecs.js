@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Login"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/https:\/\/anilist\.co\/recommendations/) && useScripts.accessToken
 	},
 	code: function(){
@@ -110,14 +110,14 @@ fragment stuff on MediaList{
 										firstCover.style.backgroundColor = rec.first.coverImage.color;
 										firstCover.style.backgroundImage = "url(\"" + rec.first.coverImage.large + "\")";
 										let firstTitle = create("div","title",false,first);
-											let firstTitleSpan = create("span",false,titlePicker(rec.first),firstTitle);
+										create("span",false,titlePicker(rec.first),firstTitle);
 									let second = create("a","media",false,pairCard);
 									second.href = rec.second.siteUrl;
 										let secondCover = create("div","cover",false,second);
 										secondCover.style.backgroundColor = rec.second.coverImage.color;
 										secondCover.style.backgroundImage = "url(\"" + rec.second.coverImage.large + "\")";
 										let secondTitle = create("div","title",false,second);
-											let secondTitleSpan = create("span",false,titlePicker(rec.second),secondTitle);
+										create("span",false,titlePicker(rec.second),secondTitle);
 									let ratingWrap = create("div","rating-wrap",false,pairCard);
 										let actions = create("div","actions",false,ratingWrap);
 											let thumbsDownWrap = create("div",["icon","thumbs-down"],false,actions,"margin-right:10px;");

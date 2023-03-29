@@ -93,7 +93,7 @@
 				(b,a) => a.score - b.score
 			).slice(0,25).forEach(rec => {
 				let card = create("p",false,false,miscResults);
-				let score = create("span","hohMonospace",rec.score.toPrecision(3) + " ",card,"margin-right:10px;");
+				create("span","hohMonospace",rec.score.toPrecision(3) + " ",card,"margin-right:10px;");
 				create("a",false,rec.title,card)
 					.href = "/" + document.getElementById("typeSelect").value.toLowerCase() + "/" + rec.id + "/"
 			})

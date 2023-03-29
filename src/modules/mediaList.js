@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Lists"],
 	visible: false,//not relevant in settings, adjust the wrapped modules instead
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/^https:\/\/anilist\.co\/.+\/(anime|manga)list\/?(.*)?$/);
 	},
 	code: function(){
@@ -30,37 +30,37 @@ exportModule({
 					//this.style.color = "rgb(var(--color-blue))";
 					let displayBox = createDisplayBox(false,"3x3 maker");
 					let col_input = create("input","hohNativeInput",false,displayBox);
-					let col_label = create("span",false,"columns",displayBox,"margin: 5px");
+					create("span",false,"columns",displayBox,"margin: 5px");
 					col_input.type = "number";
 					col_input.value = 3;
 					col_input.step = 1;
 					col_input.min = 0;
 					let row_input = create("input","hohNativeInput",false,displayBox);
-					let row_label = create("span",false,"rows",displayBox,"margin: 5px");
+					create("span",false,"rows",displayBox,"margin: 5px");
 					create("br",false,false,displayBox)
 					row_input.type = "number";
 					row_input.value = 3;
 					row_input.step = 1;
 					row_input.min = 0;
 					let margin_input = create("input","hohNativeInput",false,displayBox);
-					let margin_label = create("span",false,"spacing (px)",displayBox,"margin: 5px");
+					create("span",false,"spacing (px)",displayBox,"margin: 5px");
 					create("br",false,false,displayBox)
 					margin_input.type = "number";
 					margin_input.value = 0;
 					margin_input.min = 0;
 					let width_input = create("input","hohNativeInput",false,displayBox);
-					let width_label = create("span",false,"image width (px)",displayBox,"margin: 5px");
+					create("span",false,"image width (px)",displayBox,"margin: 5px");
 					width_input.type = "number";
 					width_input.value = 230;
 					width_input.min = 0;
 					let height_input = create("input","hohNativeInput",false,displayBox);
-					let height_label = create("span",false,"image height (px)",displayBox,"margin: 5px");
+					create("span",false,"image height (px)",displayBox,"margin: 5px");
 					create("br",false,false,displayBox)
 					height_input.type = "number";
 					height_input.value = 345;
 					height_input.min = 0;
 					let fitMode = create("select","hohNativeInput",false,displayBox);
-					let fitMode_label = create("span",false,"image fitting",displayBox,"margin	: 5px");
+					create("span",false,"image fitting",displayBox,"margin	: 5px");
 					let addOption = function(value,text){
 						let newOption = create("option",false,text,fitMode);
 						newOption.value = value;

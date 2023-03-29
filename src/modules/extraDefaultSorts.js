@@ -6,7 +6,7 @@ exportModule({
 	importance: 0,
 	categories: ["Lists","Newly Added"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/\/user\/.*\/(anime|manga)list/) || url === "https://anilist.co/settings/lists"
 	},
 	code: function(){
@@ -84,7 +84,7 @@ exportModule({
 }
 								].forEach(option => {
 									let element = create("li","el-select-dropdown__item",false,ul);
-									let elementSpan = create("span",false,option.name,element);
+									create("span",false,option.name,element);
 									if(
 										option.name === useScripts.customDefaultListOrder
 										|| (useScripts.customDefaultListOrder === "" && option.name === nativeOrder)
@@ -154,7 +154,7 @@ exportModule({
 						if(dropdown.textContent === "TitleScoreProgressLast UpdatedLast AddedStart DateCompleted DateRelease DateAverage ScorePopularity"){
 							correctDropdownFound = true;
 							let ul = dropdown.querySelector("ul");
-							Array.from(ul.children).forEach((child,index) => {
+							Array.from(ul.children).forEach((child) => {
 								if(child.textContent === useScripts.customDefaultListOrder){
 									child.click()
 								}

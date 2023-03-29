@@ -6,7 +6,7 @@ exportModule({
 	importance: 0,
 	categories: ["Feeds"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url === "https://anilist.co/home" || url.match(/^https:\/\/anilist\.co\/user\/(.*)\/$/)
 	},
 	code: function(){

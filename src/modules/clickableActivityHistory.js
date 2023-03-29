@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Navigation","Profiles"],
 	visible: false,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/\/user\/[^/]+\/?$/);
 	},
 	code: function(){

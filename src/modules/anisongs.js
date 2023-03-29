@@ -11,7 +11,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Media"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
     return /^https:\/\/anilist\.co\/(anime|manga)\/[0-9]+\/.*/.test(url)
 	},
 	code: function(){
@@ -107,7 +107,7 @@ class Videos {
         }
       })
     }
-    return entries.map((e, i) => {
+    return entries.map((e) => {
       return {
         title: cleanTitle(e)
       }

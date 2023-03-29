@@ -15,7 +15,7 @@
 	create("option",false,"Trending",sortSelect).value = "TRENDING_DESC";
 	let listRestrict = createCheckbox(miscOptions,"restrictToList");
 	create("span",false,"Restrict to personal list",miscOptions);
-	let onlyAiring = createCheckbox(miscOptions,"restrictToAiring");
+	createCheckbox(miscOptions,"restrictToAiring");
 	let onlyAiring_desc = create("span",false,"Only currently airing/publishing",miscOptions);
 	listRestrict.onchange = function(){
 		if(this.checked){

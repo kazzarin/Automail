@@ -5,7 +5,7 @@ exportModule({
 	importance: 0,
 	categories: ["Profiles"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/^https:\/\/anilist\.co\/user\/(.*?)\/?$/)
 	},
 	code: function(){

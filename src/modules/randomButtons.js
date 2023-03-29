@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Script"],
 	visible: false,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url === "https://anilist.co/site-stats";
 	},
 	code: function(){

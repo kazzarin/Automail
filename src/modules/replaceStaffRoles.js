@@ -4,7 +4,7 @@ exportModule({
 	isDefault: !!useScripts.accessToken,
 	categories: ["Media","Login"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/^https:\/\/anilist\.co\/staff\/.*/)
 	},
 	code: function(){
@@ -33,10 +33,8 @@ if(!insertParent && !insertParentCharacters){
 	return;
 }
 insertParentCharacters.classList.add("hohSubstitute");
-let substitution = false;
 if(!insertParent){
 	insertParent = create("div",["media-roles","container","substitution"],false,insertParentCharacters.parentNode);
-	substitution = true
 }
 else{
 	insertParent.classList.add("substitution")
@@ -61,7 +59,7 @@ let hohMediaRolesManga = create("div","grid-wrap",false,hohMediaRoles);
 hohMediaRolesManga.style.margin = "10px";
 //sort
 let hohMediaSort = create("div",["container","hohFilterBar"]);
-let sortText = create("span",false,translate("$staff_sort"),hohMediaSort);
+create("span",false,translate("$staff_sort"),hohMediaSort);
 let sortSelect = create("select",false,false,hohMediaSort);
 sortSelect.style.marginLeft = "5px";
 let filterSelect = create("input",false,false,hohMediaSort);
@@ -365,7 +363,7 @@ let listRenderer = function(){
 		let content = create("a","content",false,mediaA);
 		content.href = "/" + type + "/" + media.id + "/" + safeURL(media.title);
 		cheapReload(content,{path: content.pathname})
-		let name = create("div","name",media.title,content);
+		create("div","name",media.title,content);
 
 		//default value of a credit not listed here is 0. Positive values are more important, negative less important
 		let roleValues = {

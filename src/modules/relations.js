@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Profiles"],
 	visible: true,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return /^https:\/\/anilist\.co\/user\/(.*)\/social/.test(url)
 	},
 	code: function(){

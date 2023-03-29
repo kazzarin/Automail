@@ -4,7 +4,7 @@ exportModule({
 	isDefault: true,
 	categories: ["Media"],
 	visible: false,
-	urlMatch: function(url,oldUrl){
+	urlMatch: function(url){
 		return url.match(/\/anime\/.*\/characters\/?$/)
 	},
 	code: function(){

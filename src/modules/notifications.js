@@ -64,7 +64,7 @@ function enhanceNotifications(forceFlag){
 				forceRebuildFlag = true;
 				enhanceNotifications(true)
 			};
-			let description = create("span",false,translate("$notifications_hideLike"),setting);
+			create("span",false,translate("$notifications_hideLike"),setting);
 			setting.style.fontSize = "small";
 			let softBlockSpan = create("span",false,translate("$notifications_softBlock"),possibleButton.parentNode,"cursor: pointer;font-size: small;display: block;margin: 10px 0px;");
 			softBlockSpan.onclick = function(){
@@ -716,7 +716,7 @@ You can also turn off this notice there.`,setting)
 					this.parentNode.children[1].style.display = "none"
 				}
 			};
-			let commentsArea = create("div","hohCommentsArea",false,commentsContainer);
+			create("div","hohCommentsArea",false,commentsContainer);
 			newNotification.appendChild(commentsContainer)
 			newContainer.appendChild(newNotification)
 		}
@@ -909,9 +909,6 @@ You can also turn off this notice there.`,setting)
 					commentCallback(data)
 				}
 			}
-		};
-		let vars = {
-			find: i
 		};
 		if(activities[i].link[0] !== "a"){//activities with post link
 			let variables = {

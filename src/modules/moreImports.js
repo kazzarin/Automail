@@ -23,7 +23,7 @@ function moreImports(){
 	create("span","el-checkbox__label","Overwrite anime already on my list",apAnimeCheckboxContainer);
 	let apAnimeDropzone = create("div","dropbox",false,apAnime);
 	let apAnimeInput = create("input","input-file",false,apAnimeDropzone);
-	let apAnimeDropText = create("p",false,"Drop list JSON file here or click to upload",apAnimeDropzone);
+	create("p",false,"Drop list JSON file here or click to upload",apAnimeDropzone);
 	apAnimeInput.type = "file";
 	apAnimeInput.name = "json";
 	apAnimeInput.accept = "application/json";
@@ -42,7 +42,7 @@ function moreImports(){
 	create("span","el-checkbox__label","Overwrite manga already on my list",apMangaCheckboxContainer);
 	let apMangaDropzone = create("div","dropbox",false,apManga);
 	let apMangaInput = create("input","input-file",false,apMangaDropzone);
-	let apMangaDropText = create("p",false,"Drop list JSON file here or click to upload",apMangaDropzone);
+	create("p",false,"Drop list JSON file here or click to upload",apMangaDropzone);
 	apMangaInput.type = "file";
 	apMangaInput.name = "json";
 	apMangaInput.accept = "application/json";
@@ -542,7 +542,7 @@ function moreImports(){
 			});
 			queryPacker(bigQuery);
 		}
-		reader.onerror = function(evt){
+		reader.onerror = function(){
 			resultsErrors.innerText = "error reading file"
 		}
 	}
@@ -554,7 +554,7 @@ function moreImports(){
 	}
 	create("hr","hohSeparator",false,target,"margin-bottom: 40px;");
 	let userNameContainer = create("div",false,false,target,"margin-bottom: 20px;");
-	let userNameLabel = create("span",false,"User: ",userNameContainer);
+	create("span",false,"User: ",userNameContainer);
 	let userName = create("input","hohNativeInput",false,userNameContainer);
 	userName.value = whoAmI;
 	
@@ -698,10 +698,10 @@ function moreImports(){
 			}
 		);
 	};
-	let malExport = function(data,type){//maybe some time? But there's always malscraper, which does it better
+	/*let malExport = function(data,type){//maybe some time? But there's always malscraper, which does it better
 		let xmlContent = "";
 		saveAs(xmlContent,type.toLowerCase() + "list_0_-_0.xml",true);
-	}
+	}*/
 	let alAnime = create("div",["section","hohImport"],false,target);
 	create("h2",false,"Anilist JSON: Import Anime List",alAnime);
 	let alAnimeCheckboxContainer = create("label","el-checkbox",false,alAnime,"display:none;");
@@ -709,7 +709,7 @@ function moreImports(){
 	create("span","el-checkbox__label","Overwrite anime already on my list",alAnimeCheckboxContainer);
 	let alAnimeDropzone = create("div","dropbox",false,alAnime);
 	let alAnimeInput = create("input","input-file",false,alAnimeDropzone);
-	let alAnimeDropText = create("p",false,"Drop list JSON file here or click to upload",alAnimeDropzone);
+	create("p",false,"Drop list JSON file here or click to upload",alAnimeDropzone);
 	alAnimeInput.type = "file";
 	alAnimeInput.name = "json";
 	alAnimeInput.accept = "application/json";
@@ -720,7 +720,7 @@ function moreImports(){
 	create("span","el-checkbox__label","Overwrite manga already on my list",alMangaCheckboxContainer);
 	let alMangaDropzone = create("div","dropbox",false,alManga);
 	let alMangaInput = create("input","input-file",false,alMangaDropzone);
-	let alMangaDropText = create("p",false,"Drop list JSON file here or click to upload",alMangaDropzone);
+	create("p",false,"Drop list JSON file here or click to upload",alMangaDropzone);
 	alMangaInput.type = "file";
 	alMangaInput.name = "json";
 	alMangaInput.accept = "application/json";
@@ -851,7 +851,7 @@ function moreImports(){
 				)
 			}
 		}
-		reader.onerror = function(evt){
+		reader.onerror = function(){
 			resultsErrors.innerText = "error reading file"
 		}
 	}
@@ -874,7 +874,7 @@ function moreImports(){
 	create("span","el-checkbox__label","Overwrite entries already on my list (only overwrite mode implemented so far)",gdpr_importCheckboxContainer);
 	let gdpr_importDropzone = create("div","dropbox",false,gdpr_import);
 	let gdpr_importInput = create("input","input-file",false,gdpr_importDropzone);
-	let gdpr_importDropText = create("p",false,"Drop GDPR JSON file here or click to upload",gdpr_importDropzone);
+	create("p",false,"Drop GDPR JSON file here or click to upload",gdpr_importDropzone);
 	gdpr_importInput.type = "file";
 	gdpr_importInput.name = "json";
 	gdpr_importInput.accept = "application/json";
